@@ -2,12 +2,12 @@
 <html>
   <head>
     <title>Webpage</title>
-    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/mystyle.css')}}">
   </head>
   <body>
     <div class="banner">      
       <div class="navbar">
-        <img src="logo.png" class="logo">
+        <img src="http://whitesoftsulution.com/images/company-logos/whitsoft-logo.png" class="logo">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
