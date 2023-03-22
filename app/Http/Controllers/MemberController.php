@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Controllers;
+use app\Model\user;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class MemberController extends Controller
+{
+    function show()
+    {   
+      
+    }
+}
