@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\http\controllerr\MemberController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/cont', function () {
-    return view('cont');
-});
-Route::get('/ourwork', function () {
-    return view('ourwork');
-});
->
+
