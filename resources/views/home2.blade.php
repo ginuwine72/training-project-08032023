@@ -9,7 +9,7 @@
             <div class="card">
             
 
-            <div class="card-header">{{ __('welcome you ') }}</div>
+            <div class="card-header">{{ __('ข้อมูลผู้ใช้งานระบบ') }}</div>
                
                
                <div class="card-body">
@@ -18,8 +18,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum fugiat labore laboriosam obcaecati possimus! Veniam excepturi, laborum autem error facere fugit corrupti velit iste ipsa illo perferendis quo nesciunt consectetur sed nobis ea consequatur deleniti nemo magni nostrum ab molestiae?
-                  
+
+
                 </div>
             </div>
         </div>

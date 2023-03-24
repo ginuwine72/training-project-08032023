@@ -18,4 +18,10 @@ use app\http\controllerr\MemberController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('home');
+});
+Route::get('/datauser', function () {
+    return view('home2');
+});
 
