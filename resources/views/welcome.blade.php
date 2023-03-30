@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Webpage</title>
+    <title>Home</title>
     <link rel="stylesheet" href="{{asset('css/mystyle.css')}}">
   </head>
   <body>
@@ -12,7 +12,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contract">Contract</a></li>
-          <li><a href="/login">LogIn|SignUp</a></li>
+          <li><a href="/store">Store</a></li>
         </ul>
       </div>
     
@@ -22,7 +22,7 @@
       <a href="/login">
       <button type="button"><span></span>Login</button> 
       <a href="/register">
-      <button type="button"><span></span>SignUp</button>
+      <button type="button"><span></span>Register</button>
       </a>
   </div>
   

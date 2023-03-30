@@ -24,7 +24,9 @@ Route::get('/about', function () {
 route::get('/dashboard',function(){
     return view('dashboard');
 });
-
+route::get('/store',function(){
+    return view('store');
+});
 // Route::get('/contract',[contractController::class,'contract']);
 // Route::post('/contract',[contractController::class,'store']);
 
