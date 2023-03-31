@@ -27,6 +27,13 @@ route::get('/dashboard',function(){
 route::get('/store',function(){
     return view('store');
 });
+
+// สำหรับทำ สไลด์รูปภาพ //
+// Route::get('/carousel', function () {
+//     return view('carousel');
+// });
+
+
 // Route::get('/contract',[contractController::class,'contract']);
 // Route::post('/contract',[contractController::class,'store']);
 
