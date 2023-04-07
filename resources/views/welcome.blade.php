@@ -9,11 +9,11 @@
       <div class="navbar">
         <img src="http://whitesoftsulution.com/images/company-logos/whitsoft-logo.png" class="logo">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contract</a></li>
           <li><a href="/login">LogIn</a></li>
-          <li><a href="registerx">SignUp</a></li>
+          <li><a href="register">SignUp</a></li>
         </ul>
       </div>
     

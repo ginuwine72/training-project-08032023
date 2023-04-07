@@ -1,14 +1,70 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Model\user;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Pagination\Paginator;
 class MemberController extends Controller
 {
-    function show()
-    {   
-      
-    }
+  function DataTableIndex()
+  {
+      $datauser = User::paginate(10);
+      return view('home2', ['datauser' => $datauser]);
+  }
+
+
+
+
+
+ function delete($id) //ลบตรางข้อความ
+{   
+  $datauser = User::find($id); 
+  $datauser->delete();
+  return redirect('/datauser');
+}
+
+
+function showdata($id)
+{
+  $datauser= User::find($id);
+  return view('edit', ['datauser' => $datauser]);
+}
+
+function update(Request $req)
+{
+  $datauser=User::find($req->id);
+  $datauser->name=$req->name;
+  $datauser->id=$req->id;
+  $datauser->email=$req->email;
+  $datauser->password=$req->password;
+  $datauser->save();
+  return redirect('/datauser');
+
+}
+
+public function search(Request $request)
+{
+  $query = $request->input('query');
+
+  $datauser = User::where('name', 'LIKE', "%$query%")
+                  ->orWhere('email', 'LIKE', "%$query%")
+                  ->orWhere('id', 'LIKE', "%$query%")
+                  ->paginate(15);
+
+  return view('home2', ['datauser' => $datauser]);
+}
+
+
+
+
+
+public function __construct()
+{
+    $this->middleware('auth');
+}
+
+
+
+
 }

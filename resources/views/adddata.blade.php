@@ -1,6 +1,4 @@
-
-
-
+ <title>adddata</title>
 @extends('layouts.app')
 
 @section('content')
@@ -20,7 +18,24 @@
                             {{ session('status') }}
                         </div>
                     @endif
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum fugiat labore laboriosam obcaecati possimus! Veniam excepturi, laborum autem error facere fugit corrupti velit iste ipsa illo perferendis quo nesciunt consectetur sed nobis ea consequatur deleniti nemo magni nostrum ab molestiae?
+                    <link rel="stylesheet" href="{{asset('css/adddatafrom.css')}}">
+<h2>add data from</h2>
+
+
+ 
+<form action="" method="POST">
+    @csrf
+    <div class="container"> 
+        <label for="uname"><b>NAME</b></label>
+        <input type="text" placeholder="Enter Username" name="name" required>
+        <label for="uname"><b>EMAIL</b></label>
+        <input type="text" placeholder="Enter Username" name="mail" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="pass" required>
+        <button type="submit">SUBMIT</button>
+
+    </div>
+</form>
                   
                 </div>
             </div>
