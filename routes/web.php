@@ -54,7 +54,10 @@ Route::middleware(['auth'])->group(function () {
         });
         });    
         //
-        Route::view('adddata','adddata');
 
+
+        Route::POST('adddata', [MemberController::class, 'adddata']);
+
+        
         
         

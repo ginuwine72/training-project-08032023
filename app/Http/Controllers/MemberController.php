@@ -63,5 +63,19 @@ public function __construct()
 }
 
 
+function adddata(Request $req)
+{
+  $datauser = new User;
+  $datauser->name = $req->name;
+  $datauser->email = $req->email;
+  $datauser->password = bcrypt($req->password);
+  $datauser->save();
+
+  return redirect('/datauser');
+}
 
 }
+
+
+
+
