@@ -23,7 +23,6 @@ Route::get('/dashboard', function () {
     return view('home');
 });
 
-Route::view('adddata','adddata');
 
 // Route::any('/adddata', [MemberController::class, 'adddata']);
 
@@ -55,3 +54,7 @@ Route::middleware(['auth'])->group(function () {
         });
         });    
         //
+        Route::view('adddata','adddata');
+
+        
+        

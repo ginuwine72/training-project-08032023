@@ -25,10 +25,12 @@
                         </div>
                     @endif
                  <!-- ค้นหาข้อมูล -->
-                    <form action="{{ url('search') }}" method="get">
-  <input type="text" name="query" placeholder="Search...">
-  <button type="submit">Search</button>
+                 <form action="{{ url('search') }}" method="get">
+    <input type="text" name="query" placeholder="Search By Mail or Name">
+    <button type="submit">Search</button>
 </form>
+
+
  <!-- ค้นหาข้อมูล -->
                <table>
                <tr>

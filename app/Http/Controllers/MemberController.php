@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Hash;
 class MemberController extends Controller
 {
   function DataTableIndex()
@@ -46,24 +47,20 @@ function update(Request $req)
 public function search(Request $request)
 {
   $query = $request->input('query');
+ 
 
   $datauser = User::where('name', 'LIKE', "%$query%")
                   ->orWhere('email', 'LIKE', "%$query%")
                   ->orWhere('id', 'LIKE', "%$query%")
                   ->paginate(15);
-
+                  $datauser->appends($request->all());//&page=num
   return view('home2', ['datauser' => $datauser]);
 }
-
-
-
-
 
 public function __construct()
 {
     $this->middleware('auth');
 }
-
 
 
 
