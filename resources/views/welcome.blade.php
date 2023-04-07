@@ -23,7 +23,7 @@
       <a href="/login" >
       <button type="button"><span></span>Login</button> </a>
       <a href="/register" > <button type="button"><span></span>SignUp</button> </a>
-
+jj
   </div>
  
     </div>
