@@ -21,20 +21,23 @@
                     <link rel="stylesheet" href="{{asset('css/adddatafrom.css')}}">
                     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                     
-<h2>add data from</h2>
+<h2>addproduct</h2>
 
 
-<form action="/adddata" method="POST" id="myForm">
+<form action="" method="POST" id="myForm">
     @csrf
 
-        <label for="name">Name</label>
+       <div class="dev">
+        <input type="file" id="image-upload" name="image">
+        </div>
+        <label for="name"><br>Prodduct</label>
         <input type="text" placeholder="Enter name" name="name" required>
    
-        <label for="email">Email</label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="email">Product Price</label>
+        <input type="text" placeholder="Enter Email" name="Price" required>
 
-        <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <label for="password">description</label>
+        <input type="text" placeholder="Enter description" name="description" required>
         <button type="submit" onclick="showSuccess(event)">Register</button>
  
 </form>
