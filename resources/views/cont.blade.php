@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
+  <title>Contact</title>
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -15,7 +19,7 @@
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">If you interested in our company you can send message to us below here.</p>
       </div>
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <form method="POST" action="{{route('contract.store')}}">
+        <form method="POST" action="{{route('contract.store')}}" onsubmit="myFunction()">
           @csrf
           <div class="flex flex-wrap -m-2">
             <div class="p-2 w-1/2">
@@ -71,10 +75,18 @@
             </div>
           </div>
         </form>
-
       </div>
     </div>
   </section>
+  <script > window.alert
+function myFunction() {
+  var alertBox = document.createElement("div");
+  alertBox.innerHTML = "Form submitted!";
+  alertBox.classList.add("alert");
+  document.body.appendChild(alertBox);
+}
+
+</script>
 </body>
 
 </html>

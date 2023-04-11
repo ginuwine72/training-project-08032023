@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <style>
+  .headerr{
+    position: relative;
+    bottom: 25px;
+  }
   .separator-ih {
   height: 1px;
   margin: 10px 0;
@@ -37,15 +42,52 @@
   left : 100px;;
   top: 30px;
 }
+.carousel-img{
+  position: relative;
+  top: 250px;
+  right: 200px;
+}
+.carousel-img3{
+  position: relative;
+  top: 175px;
+  left: 700px;
+  height: 200px;
+  width: 57%;
+}
+.gall{
+  position: relative;
+  top: 250px;
+}
+.head4{
+  position: relative;
+  top: 350px;
+}
+.button2{
+  position: relative;
+  top: 10px;
+}
 
+.navbar-sticky-top
+{
+    position: fixed;
+    z-index: 999;
+    opacity:1;
+    width: 100%;
+}
+.footer{
+  position: relative;
+  top: 20px;
+}
 </style>
     @vite('resources/css/app.css')
     
     <title>Store</title>
 </head>
 <body>
+  <header>
+  <nav >
     <div>
-        <section>  
+        <section class="headerr">  
         <!-- ส่วนหัวขอเว็บ  -->
         <header class="text-gray-600 body-font">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -91,10 +133,11 @@
     <!-- ส่วนตะกร้าไอคอน -->
     <div class="carts">
     <div class="object-right-top">
+      <a href="/cart">
     <button type="button" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
 </svg>
-</button></div></div>
+</button></a></div></div></nav>
       
     </section>
   </div>
@@ -151,7 +194,11 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">Monitor Lg-32</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$350</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
+      
 
       <a href="#" class="group">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
@@ -159,6 +206,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">Kingston Fury Beast RGB 16(8GBx2)</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$125</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
       <a href="#" class="group">
@@ -167,6 +217,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">NOTEBOOK ASUS TUF GAMING F15</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$1099</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
       <a href="#" class="group">
@@ -175,6 +228,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">Smart TV Neo QLED 4K</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$945</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
 
@@ -200,6 +256,12 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">Rezer Essential</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$288</p>
+        <!-- <button style="font-size:16px">Add TO Cart <i class="fa fa-shopping-cart"></i></button> -->
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
+
+
       </a>
 
       <a href="#" class="group">
@@ -208,6 +270,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">VGA GALAX GEFORCE RTX 3060</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$545</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
       <a href="#" class="group">
@@ -216,6 +281,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">CASE DEEPCOOL WAVE V2</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$79</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
       <a href="#" class="group">
@@ -224,6 +292,9 @@
         </div>
         <h3 class="mt-4 text-sm text-gray-700">CPU INTEL CORE I3-10100F 3.60 GHz </h3>
         <p class="mt-1 text-lg font-medium text-gray-900">$99</p>
+        <div class="button2">
+        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+        </div>
       </a>
 
       <!-- More products... -->
@@ -236,9 +307,193 @@
     </div>
     <section>
       <div class="carousel-img">
-        
-
+        <div class="mx-48 h-20 p-10">
+      <div class="example">
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="image/b1.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>First slide label</h5>
+					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/b2.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Second slide label</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/b3.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Third slide label</h5>
+					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" data-bs-target="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</a>
+		<a class="carousel-control-next" data-bs-target="#carouselExampleCaptions" role="button" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</a>
+	</div>
+</div>
+        </div>
       </div>
+    </section>
+    <section>
+      
+    <div class="carousel-img3">
+        <div class="mx-48 h-20 p-10">
+      <div class="example">
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="image/c1.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>First slide label</h5>
+					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/c2.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Second slide label</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/c3.png" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Third slide label</h5>
+					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+        </div>
+      </div>
+      <div class="head4">
+     <h4  class="m-0" style="font-size: 30px ;font-weight: bold;"><span style="color:#d4001a">Our</span> Products</h4>
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 class="sr-only">Products</h2>
+  </div>
+    </section>
+    <div class="gall">
+      
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div><a href="/hairtreatment">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+    </a></div>
+    <div><a href="/shoes1">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+    </a></div>
+    <div><a href="/rug1">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+    </a></div>
+    <div><a href="/decoration">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+    </a></div>
+    <div><a href="/watch">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+    </a></div>
+    <div><a href="/shoes2">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+    </a></div>
+    <div><a href="/cream">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
+    </a></div>
+    <div><a href="laptop">
+        <img class="h-auto max-w-full rounded-lg" src="image/laptop.jpg" alt="">
+    </a></div>
+    <div><a href="/decoration2">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
+    </a></div>
+    <div><a href="/skincare">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
+    </a></div>
+    <div><a href="/joygame">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
+    </a></div>
+    <div><a href="/bagpack">
+        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
+    </a></div>
+</div>
+
+    <!-- </div>
+    <section class="endcarousel">
+      <div class="mx-48  w-15 h-2px p-5">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="image/ca1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="image/ca2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="image/ca3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div></div>
+    </section> -->
+    <section>
+    <div class="footer">
+      
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="/" class="flex items-center mb-4 sm:mb-0">
+                <img src="http://127.0.0.1:8000/image/default.png" class="h-10 mr-3" alt="WS Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WhiteStore</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">WhiteStore™</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
+
+    </div>
     </section>
   </body>
 </html>
