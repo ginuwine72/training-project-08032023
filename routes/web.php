@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ContractController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,27 @@ route::get('/store',function(){
 route::get('/cart',function(){
     return view('cart');
 });
+//login-regis page
+Route::get('/definedyouselfas',function(){
+    return view('whatyouwanttobe');
+});
+Route::get('/definedyouself',function(){
+    return view('youare');
+});
+
+route::get('/userregister',function(){
+    return view('register/userregister');
+});
+route::get('/ownerregister',function(){
+    return view('register/ownerregister');
+});
+
+//contoller for register (User)
+
+Route::get('/userregister', [UserRegisterController::class, 'showRegistrationForm']);
+Route::post('/userregister', [UserRegisterController::class, 'userregister']);
+
+
 
 route::get('/hairtreatment',function(){
     return view('product_page/product/hairtreatment');
@@ -99,9 +122,7 @@ Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
 Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
 Route::get('/cart', [ShoppingCartController::class, 'showCart']);
 
-
+Auth::routes();
 Route::get('/store/product', function () {
-    return view('store') . '<h4  class="m-0" style="font-size: 30px ;font-weight: bold;"><span style="color:#d4001a">Our</span> Products</h4>
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 class="sr-only">Products</h2>';
+    return view('store');
 });

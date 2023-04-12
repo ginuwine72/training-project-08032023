@@ -19,9 +19,9 @@
     <div class="content">
       <h1>This is First Page</h1>
       <p>this is content of first page and little detail you can see in about.</p>
-      <a href="/login">
+      <a href="/definedyouself">
       <button type="button"><span></span>Login</button> 
-      <a href="/register">
+      <a href="/definedyouselfas">
       <button type="button"><span></span>Register</button>
       </a>
   </div>
