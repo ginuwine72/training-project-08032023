@@ -46,16 +46,6 @@ public function showproduct()
 
 
 
-public function search(Request $request)
-{
-  $query = $request->input('query');
- 
 
-  $product = product::where('name', 'LIKE', "%$query%")
-                  ->orWhere('price', 'LIKE', "%$query%")
-                  ->paginate(15);
-                  $product->appends($request->all());//&page=num
-  return view('showproduct', ['product' => $product]);
-}
 
 }

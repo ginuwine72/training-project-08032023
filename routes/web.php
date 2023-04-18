@@ -111,13 +111,13 @@ Route::get('/store/product', function () {
 // ----
 
 Route::get('addproduct', [ProductController::class, 'create']);
-Route::post('adddatafromproduct', [ProductController::class, 'addproduct']);
+// Route::post('showproduct', [ProductController::class, 'addproduct']);
 
 
 
 // Route::view('showproduct','showproduct'); 
-Route::get('adddatafromproduct', [ProductController::class, 'showproduct']);
-Route::get('search', [ProductController::class, 'search']);
+Route::get('showproduct', [ProductController::class, 'showproduct']);
+
 
 
 
