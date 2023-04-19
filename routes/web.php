@@ -108,7 +108,7 @@ Route::get('/store/product', function () {
       <h2 class="sr-only">Products</h2>';
 });
 
-// ----
+// ----rd
 
 Route::get('addproduct', [ProductController::class, 'create']);
 Route::post('addproduct', [ProductController::class, 'addproduct']);
@@ -119,6 +119,7 @@ Route::post('addproduct', [ProductController::class, 'addproduct']);
 Route::get('showproduct', [ProductController::class, 'showproduct']);
 
 
+Route::get('search', [ProductController::class, 'search']);
 
 
 
