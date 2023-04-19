@@ -160,8 +160,7 @@
         ฿{{$pd['price']}}
         <span style="font-size: 12px; margin-left: 5px; color: green;">ส่วนลด 25%</span>
     </h1>
-    
-
+  
   </div>
   </div>
   </td>
