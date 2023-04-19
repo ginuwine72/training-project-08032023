@@ -83,6 +83,7 @@
   -->
   <!-- <header class="sticky-header"> -->
   <section>  
+
           <!-- ส่วนหัวขอเว็บ  -->
           <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -139,10 +140,11 @@
   </header>
 
   <div class="bg-white">
-    <div class="pt-6">
+    
       <nav aria-label="Breadcrumb">
         <ol role="list" class="mx-auto flex max-w-2xl items-c enter space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         @foreach ($product as $pd)
+      
         <div class="frame" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
   <div style="text-align: left;">
   <img src="{{ asset('product/'.$pd['image']) }}" style="width: 188px; height: 188px;" alt="">
@@ -160,8 +162,8 @@
     </h1>
    
 
-
   </div>
   </div>
+  
 
 @endforeach
