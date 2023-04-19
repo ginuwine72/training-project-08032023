@@ -34,7 +34,7 @@ public function addproduct(Request $request)
     }
 
     $product->save();
-    return view('welcome');
+    return redirect('showproduct');
 }
 
     

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/addproduct.css') }}">
-<form method="post" action="{{ url('adddatafromproduct') }}" enctype="multipart/form-data">
-    @csrf
+<form method="post" action="" enctype="multipart/form-data">
+        @csrf
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" class="form-control" placeholder="Enter product name">
