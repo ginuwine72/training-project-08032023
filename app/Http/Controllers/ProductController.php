@@ -40,7 +40,7 @@ public function addproduct(Request $request)
     
 public function showproduct()
 {
-    $product=product::all();
+    $product=product::paginate(6);
    return view('showproduct',['product'=>$product]);
 }
 
@@ -52,8 +52,8 @@ public function search(Request $request)
   $products = Product::where('name', 'LIKE', "%$query%")
                       ->orWhere('price', 'LIKE', "%$query%")
                       ->orWhere('description', 'LIKE', "%$query%")
-
-                      ->paginate(15);
+                      ->paginate(7);
+                      $products->appends($request->all());
                 
   return view('showproduct', ['product'=>$products, 'query'=>$query]);
 }
