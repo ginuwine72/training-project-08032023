@@ -4,9 +4,8 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
       @vite('resources/css/app.css')
-      <title>Backpack</title>
+      <title>product</title>
       <script>
       var checkbox = document.querySelector('#sizebut');
       var button = document.querySelector('#sizebut');
@@ -136,25 +135,26 @@
   </button></a></div></div>
         
       </section>
-      
+    
   </header>
-
   <div class="bg-white">
     
       <nav aria-label="Breadcrumb">
         <ol role="list" class="mx-auto flex max-w-2xl items-c enter space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      
         @foreach ($product as $pd)
-<div class="frame" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
+<div class="frame" style="display: inline-block;" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
 <div style="text-align: left;">
 <img src="{{ asset('product/'.$pd['image']) }}" style="width: 188px; height: 188px;" alt="">
 <h1 style="font-weight: bold; font-size: 15px;">{{$pd['name']}}</h1>
-{{$pd['description']}}<br>
+<div class="description"style="width: 188px;">{{$pd['description']}}<br></div>
 <h1 style="color: grey; font-weight: bold; font-size: 10px; text-decoration: line-through; margin-right: 10px;">
 ฿{{ number_format($pd['price'] + ($pd['price'] * 0.25), 2) }}
 </h1>
 <h1 style="color: red; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
 ฿{{$pd['price']}}<span style="font-size: 12px; margin-left: 5px; color: green;">ส่วนลด 25%</span>
 </h1>
-</div>
-</div>
+  </div>
+  </div>
+
 @endforeach

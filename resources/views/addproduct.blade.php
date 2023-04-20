@@ -18,4 +18,6 @@
         <input type="file" name="image" class="form-control-file">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+
+</button>
 </form>
