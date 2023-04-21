@@ -1,3 +1,4 @@
+<div class="box">
 <link rel="stylesheet" href="{{ asset('css/addproduct.css') }}">
 <form method="post" action="" enctype="multipart/form-data">
         @csrf
@@ -21,3 +22,4 @@
 
 </button>
 </form>
+</div>

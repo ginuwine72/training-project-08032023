@@ -52,7 +52,8 @@ public function search(Request $request)
   $products = Product::where('name', 'LIKE', "%$query%")
                       ->orWhere('price', 'LIKE', "%$query%")
                       ->orWhere('description', 'LIKE', "%$query%")
-                      ->paginate(7);
+                      ->orWhere('id', 'LIKE', "%$query%")
+                      ->paginate(12);
                       $products->appends($request->all());
                 
   return view('showproduct', ['product'=>$products, 'query'=>$query]);
