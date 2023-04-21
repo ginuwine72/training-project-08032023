@@ -29,7 +29,7 @@
             <div class="flex items-center justify-end mt-4">
                 <x-button>
                     {{ __('Reset Password') }}
-                </x-button>
+                </x-button>cas98g8hooahscohacoshcphapchpias
             </div>
         </form>
     </x-authentication-card>
