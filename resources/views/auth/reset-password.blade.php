@@ -28,7 +28,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Reset Password') }}
+                    {{ __('Reset cas98g8hooahscohacoshcphapchpiascas98g8hooahscohacoshcphapchpiascas98g8hooahscohacoshcphapchpias') }}
                 </x-button>
             </div>
         </form>
