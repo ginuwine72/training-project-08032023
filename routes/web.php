@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ContractController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ route::get('/store',function(){
 route::get('/cart',function(){
     return view('cart');
 });
+Route::get('auth/login',function(){
+    return view('login');
+});
+
 
 route::get('/hairtreatment',function(){
     return view('product_page/product/hairtreatment');
@@ -94,14 +100,25 @@ Route::post('/contract', [ContractController::class , 'store'])->name('contract.
 //     return view('dashboard');
 // })->name('contract.store');
 
-Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
-Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
-Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
-Route::get('/cart', [ShoppingCartController::class, 'showCart']);
+// Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
+// Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
+// Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
+// Route::get('/cart', [ShoppingCartController::class, 'showCart']);
 
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::post('/cart/empty', 'CartController@emptyCart')->name('cart.empty');
+Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
+
+Route::name('profile.edit')->get('/profile/edit', [ProfileController::class, 'edit']);
+
+
+Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+
+Route::get('/cart',function(){
+    return view('cart');
+});
 
 Route::get('/store/product', function () {
-    return view('store') . '<h4  class="m-0" style="font-size: 30px ;font-weight: bold;"><span style="color:#d4001a">Our</span> Products</h4>
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 class="sr-only">Products</h2>';
+    return view('store');
 });

@@ -103,24 +103,24 @@
 
   
 
-  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Our Vision.</span></h1>
+  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Our Vision.</span></h1>
 
 
   
 
 
   <figure class="max-w-screen-md mx-auto text-center">
-    <svg aria-hidden="true" class="w-12 h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+    <svg aria-hidden="true" class="w-12 h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
     <blockquote>
-        <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"No man goes before his time — unless the boss leaves early"</p>
+        <p class="text-2xl italic font-medium text-gray-900">"No man goes before his time — unless the boss leaves early"</p>
     </blockquote>
     <figcaption class="flex items-center justify-center mt-6 space-x-3">
         
-<img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://scontent.fhdy3-1.fna.fbcdn.net/v/t1.6435-9/117356695_2608839099370410_5490819344117460886_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeE8YNIEo5YCXdQ0Qsvv0S1hOhN_AXngW186E38BeeBbX-kODDzuPs_uptDo8sp4bFdPynEOY6EhZargEO3cFAOM&_nc_ohc=MD3y0p1p0JQAX_Fi67e&_nc_ht=scontent.fhdy3-1.fna&oh=00_AfDu0cAUR2g3d3aidHf2JrMMYB94GF11Z5MhLdqSbW4z7w&oe=644B1950" alt="Bordered avatar">
+<img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300" src="https://scontent.fhdy3-1.fna.fbcdn.net/v/t1.6435-9/117356695_2608839099370410_5490819344117460886_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeE8YNIEo5YCXdQ0Qsvv0S1hOhN_AXngW186E38BeeBbX-kODDzuPs_uptDo8sp4bFdPynEOY6EhZargEO3cFAOM&_nc_ohc=MD3y0p1p0JQAX_Fi67e&_nc_ht=scontent.fhdy3-1.fna&oh=00_AfDu0cAUR2g3d3aidHf2JrMMYB94GF11Z5MhLdqSbW4z7w&oe=644B1950" alt="Bordered avatar">
 
-        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-            <cite class="pr-3 font-medium text-gray-900 dark:text-white">TonyWn</cite>
-            <cite class="pl-3 text-sm text-gray-500 dark:text-gray-400">Intern at Google</cite>
+        <div class="flex items-center divide-x-2 divide-gray-500">
+            <cite class="pr-3 font-medium text-gray-900">TonyWn</cite>
+            <cite class="pl-3 text-sm text-gray-500">Intern at Google</cite>
         </div>
     </figcaption>
 </figure>
@@ -220,14 +220,14 @@
     <br>
 
     
-<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+<footer class="bg-white rounded-lg shadow m-4">
     <div class="w-full container mx-auto p-4 md:px-6 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="http://whitesoftsulution.com/" class="flex items-center mb-4 sm:mb-0">
                 <img src="http://whitesoftsulution.com/images/company-logos/whitsoft-logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">White Softsolution</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap">White Softsolution</span>
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
                 <li>
                     <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
                 </li>
@@ -242,8 +242,8 @@
                 </li>
             </ul>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="http://whitesoftsulution.com/" class="hover:underline">White Softsolution™</a>. All Rights Reserved.</span>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center">© 2023 <a href="http://whitesoftsulution.com/" class="hover:underline">White Softsolution™</a>. All Rights Reserved.</span>
     </div>
 </footer>
 

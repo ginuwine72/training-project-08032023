@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/mystyle.css')}}">
   </head>
   <body>
@@ -9,7 +9,7 @@
       <div class="navbar">
         <img src="http://whitesoftsulution.com/images/company-logos/whitsoft-logo.png" class="logo">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/">Dashboard</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contract">Contract</a></li>
           <li><a href="/store">Store</a></li>
