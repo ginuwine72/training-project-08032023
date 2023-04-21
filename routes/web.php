@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProductController;
 use App\Models\User;
+use App\Models\Product;
 
 
 /*
@@ -19,14 +21,10 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
-    return view('home');
-});
-Route::get('/appproduct', function () {
-    return view('product');
-});
 
-// Route::any('/adddata', [MemberController::class, 'adddata']);
+
+
+
 
 
 Route::get('edit/{id}', [MemberController::class, 'showdata']);
@@ -60,6 +58,5 @@ Route::middleware(['auth'])->group(function () {
 
         Route::POST('adddata', [MemberController::class, 'adddata']);
 
-        
-        
-        
+route::view('add','product');
+route::post('add',[ProductController::class,'addproduct']);
