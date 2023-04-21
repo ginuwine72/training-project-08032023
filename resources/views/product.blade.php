@@ -18,30 +18,28 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <link rel="stylesheet" href="{{asset('css/product.css')}}">
+                    <link rel="stylesheet" href="{{asset('css/adddatafrom.css')}}">
                     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                     
 <h2>addproduct</h2>
 
 
-<form action="add" method="POST" id="myForm">
+<form action="" method="POST" id="myForm">
     @csrf
-    
-    <label for="image">รูปภาพสินค้า:</label>
-      <input type="file" id="image" name="image" accept="image/*" required>
 
-    <label for="name">ชื่อสินค้า:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="price">ราคาสินค้า:</label>
-      <input type="number" id="price" name="price" required>
-      
-      <label for="description">รายละเอียดสินค้า:</label>
-      <textarea id="description" name="description" required></textarea>
-      
-    
-      
-      <button type="submit">ส่งข้อมูล</button>
+       <div class="dev">
+        <input type="file" id="image-upload" name="image">
+        </div>
+        <label for="name"><br>Prodduct</label>
+        <input type="text" placeholder="Enter name" name="name" required>
+   
+        <label for="email">Product Price</label>
+        <input type="text" placeholder="Enter Email" name="Price" required>
+
+        <label for="password">description</label>
+        <input type="text" placeholder="Enter description" name="description" required>
+        <button type="submit" onclick="showSuccess(event)">Register</button>
+ 
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
