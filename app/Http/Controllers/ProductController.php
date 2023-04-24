@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\product;
 use App\Http\Controllers\products;
+use Munna\ShoppingCart\Cart;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ public function addproduct(Request $request)
     }
 
     $product->save();
-    return redirect('showproduct');
+    return redirect('computer');
 }
 
     
@@ -59,7 +60,11 @@ public function search(Request $request)
   return view('showproduct', ['product'=>$products, 'query'=>$query]);
 }
 
-
+    
+public function addtocart($id)
+{
+ 
+}
 
 
 }

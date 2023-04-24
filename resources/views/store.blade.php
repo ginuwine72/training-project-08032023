@@ -98,11 +98,12 @@
       <span class="ml-3 text-xl">WhiteStore</span>
     </a>
     <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-gray-900">Mobile</a>
-      <a class="mr-5 hover:text-gray-900">Computer</a>
-      <a class="mr-5 hover:text-gray-900">Clothes</a>
-      <a class="mr-5 hover:text-gray-900">Accessories</a>
-      
+    <ul>
+    <a href="/"class="mr-5 hover:text-gray-900">Mobile</a>
+      <a href="/computer"class="mr-5 hover:text-gray-900">Computer</a>   
+      <a href="/"class="mr-5 hover:text-gray-900">Clothes</a> 
+      <a href="/"class="mr-5 hover:text-gray-900">Accessories</a>
+      </ul>
       
 
       <form class="flex items-center">   

@@ -116,16 +116,13 @@ Route::post('addproduct', [ProductController::class, 'addproduct']);
 
 // Route::get('adddatafromproduct', [ProductController::class, 'showproduct']);
 // Route::view('showproduct','showproduct'); 
-Route::get('showproduct', [ProductController::class, 'showproduct']);
+Route::get('computer', [ProductController::class, 'showproduct']);
 
 
 Route::get('search', [ProductController::class, 'search']);
 
+route::view('cart','cart');
 
 
 
 
-Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
-Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
-Route::patch('update-cart', [ProductsController::class, 'update'])->name('update_cart');
-Route::delete('remove-from-cart', [ProductsController::class, 'remove'])->name('remove_from_cart');
