@@ -19,7 +19,9 @@ use App\Http\Controllers\UserRegisterController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/login', function () {
+    return view('auth/login');
+});
 Route::get('/about', function () {
     return view('about');
 });
@@ -117,12 +119,12 @@ Route::post('/contract', [ContractController::class , 'store'])->name('contract.
 //     return view('dashboard');
 // })->name('contract.store');
 
-Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
-Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
-Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
-Route::get('/cart', [ShoppingCartController::class, 'showCart']);
+// Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
+// Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
+// Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
+// Route::get('/cart', [ShoppingCartController::class, 'showCart']);
 
-Auth::routes();
+// Auth::routes();
 Route::get('/store/product', function () {
     return view('store');
 });
