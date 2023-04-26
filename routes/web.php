@@ -121,8 +121,8 @@ Route::get('computer', [ProductController::class, 'showproduct']);
 
 Route::get('search', [ProductController::class, 'search']);
 
-route::view('cart','cart');
+// Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add_to_cart');
 
 
-
+Route::get('product/{id}', [ProductController::class, 'showitem']);
 

@@ -41,7 +41,7 @@ public function addproduct(Request $request)
     
 public function showproduct()
 {
-    $product=product::paginate(6);
+    $product=product::all();
    return view('showproduct',['product'=>$product]);
 }
 
@@ -61,10 +61,32 @@ public function search(Request $request)
 }
 
     
-public function addtocart($id)
-{
+// public function addToCart($id)
+//     {
+//         $product = Product::findOrFail($id);
  
+//         $cart = session()->get('cart', []);
+ 
+//         if(isset($cart[$id])) {
+//             $cart[$id]['quantity']++;
+//         }  else {
+//             $cart[$id] = [
+//                 "name" => $product->name,
+//                 "image" => $product->image,
+//                 "price" => $product->price,
+//                 "quantity" => 1
+//             ];
+//         }
+ 
+//         session()->put('cart', $cart);
+//         return redirect()->back()->with('success', 'Product add to cart successfully!');
+//     }
+public function showitem($id)
+{
+    $products=Product::find($id);
+    return view('showitem',compact('products'));
 }
+
 
 
 }

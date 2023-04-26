@@ -1,35 +1,30 @@
-@extends('layout')
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
 
-@section('content')
-
-
-<link rel="stylesheet" href="{{asset('css/button.css')}}">
-  {{$product->links('')}}
-  <div class="new"><h1 class="m-0" style="font-size: 30px ;font-weight: bold;"><span style="color:#d4001a">New</span> Products</h1>
-  <span style="color:#d4001a"></h1></div>
-  <div class="bg-white">
-  
-      <nav aria-label="Breadcrumb">
-        <ol role="list" class="mx-auto flex max-w-2xl items-c enter space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-6 gap-5">
-@foreach($product as $pd)
-
-<div class="frame" style="display: inline-block;" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
-    <div style="text-align: left;">
-        <img src="{{ asset('product/'.$pd['image']) }}" style="width: 188px; height: 188px;" alt="">
-        <h1 style="font-weight: bold; font-size: 15px;">{{$pd['name']}}</h1>
-        <div class="description" style="width: 188px;">{{$pd['description']}}<br></div>
-        <h1 style="color: grey; font-weight: bold; font-size: 10px; text-decoration: line-through; margin-right: 10px;">
-            ฿{{ number_format($pd['price'] + ($pd['price'] * 0.25), 2) }}
-        </h1>
-        <h1 style="color: red; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
-            ฿{{$pd['price']}}<span style="font-size: 12px; margin-left: 5px; color: green;">ส่วนลด 25%</span>
-        </h1>
-      <a href=""><div class="button"><button>
-      Add To Cart</button></div></a> 
-    </div>
+<link rel="stylesheet" href="{{asset('css/showproduct.css')}}">
+	<title>product</title>
+	
+</head>
+<body>
+  <div class="fronco">
+      <h1><span>OUR PRODUCTS</span></h1> 
+  </div>
+  <div class="kok"></div>
+  @foreach($product as $pd)
+  <a href="{{url('product/'.$pd->id)}}"class="">
+ <div class="frame" style="display: inline-block; margin-right: 35px;" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
+  <img src="{{ asset('product/'.$pd['image']) }}" style="width: 240px; height: 240px;" alt="">
+  <div class="nameproduct">{{$pd['name']}}</div>
+  <div class="price">{{$pd['price']}} ฿</div>
 </div>
-
+</a> 
 @endforeach
-
-@endsection
+</body>
+</html>

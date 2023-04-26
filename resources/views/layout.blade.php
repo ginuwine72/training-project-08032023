@@ -2,6 +2,12 @@
   <html lang="en">
   <head>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,6 +88,7 @@
     ```
   -->
   <!-- <header class="sticky-header"> -->
+
   <section>  
 
           <!-- ส่วนหัวขอเว็บ  -->
@@ -128,20 +135,50 @@
   </svg>
       </button></div>
       <!-- ส่วนตะกร้าไอคอน -->
-      <div class="dropdown">
-     <button type="button" class="btn btn-primary" data-toggle="dropdown">
-      <div class="carts">
-      <div class="object-right-top">
-        <a href="">
-      <button type="button" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-  </svg>
-  </button></a></div></div>
-        
-  
-    
+      
+      <!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-12">
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                </button>
+ 
+                <div class="dropdown-menu">
+                    <div class="row total-header-section">
+                        @php $total = 0 @endphp
+                        @foreach((array) session('cart') as $id => $details)
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+                        @endforeach
+                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                            <p>Total: <span class="text-info">$ {{ $total }}</span></p>
+                        </div>
+                    </div>
+                    @if(session('cart'))
+                        @foreach(session('cart') as $id => $details)
+                            <div class="row cart-detail">
+                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                    <img src="{{ asset('product/'.$pd['image']) }}" />
+                                </div>
+                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                    <p>{{ $pd ['name'] }}</p>
+                                    <span class="price text-info"> ${{ $pd['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                            <a href="" class="btn btn-primary btn-block">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
       </section>
-    
+     -->
   </header>
  @yield('content') 
 </body>
