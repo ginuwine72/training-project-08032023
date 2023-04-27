@@ -126,3 +126,6 @@ Route::get('search', [ProductController::class, 'search']);
 
 Route::get('product/{id}', [ProductController::class, 'showitem']);
 
+Route::get('add_to_cart/{id}', [ProductController::class, 'addtocart'])
+->name('add_to_cart');
+
