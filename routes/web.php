@@ -3,9 +3,9 @@
 use App\Http\Controllers\ContractController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserRegisterController;
-use App\Http\Controllers\Auth\LoginRegisterController;
 
+use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,28 +32,6 @@ route::get('/dashboard',function(){
 route::get('/store',function(){
     return view('store');
 });
-route::get('/cart',function(){
-    return view('cart');
-});
-//login-regis page
-Route::get('/definedyouselfas',function(){
-    return view('whatyouwanttobe');
-});
-Route::get('/definedyouself',function(){
-    return view('youare');
-});
-
-// route::get('/userregister',function(){
-//     return view('register/userregister');
-// });
-// route::get('/ownerregister',function(){
-//     return view('register/ownerregister');
-// });
-
-//contoller for register (User)
-
-Route::get('/userregister', [UserRegisterController::class, 'showRegistrationForm']);
-Route::post('/userregister', [UserRegisterController::class, 'userregister']);
 
 
 
@@ -123,13 +101,7 @@ Route::post('/contract', [ContractController::class , 'store'])->name('contract.
 Route::get('/store/product', function () {
     return view('store');
 });
-Route::get('/store2', function () {
-    return view('store2');
-});
 
-Route::get('/checkout',function(){
- return view('checkout');
-});
 
 /// Login&Register
 
@@ -141,3 +113,33 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
 });
+=======
+
+// ----rd
+
+Route::get('addproduct', [ProductController::class, 'create']);
+Route::post('addproduct', [ProductController::class, 'addproduct']);
+
+
+
+Route::get('computer', [ProductController::class, 'showproduct']);
+
+
+Route::get('search', [ProductController::class, 'search']);
+
+
+
+Route::get('product/{id}', [ProductController::class, 'showitem']);
+
+Route::get('add_to_cart/{id}', [ProductController::class, 'addtocart'])
+->name('add_to_cart');
+
+route::get('cart', [ProductController::class, 'cart'])
+->name('cart');
+
+Route::patch('update-cart', [ProductController::class, 'update'])
+->name('update_cart');
+
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])
+->name('remove_from_cart');
+>>>>>>> develop

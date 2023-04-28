@@ -1,38 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShoppingCart</title>
-</head>
-<body>
-<h1>Cart Page</h1>
-
-<table>
+@extends('layout')
+   
+@section('content')
+<table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
+            <th style="width:50%">Product</th>
+            <th style="width:10%">Price</th>
+            <th style="width:8%">Quantity</th>
+            <th style="width:22%" class="text-center">Subtotal</th>
+            <th style="width:10%"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach(Cart::content() as $item)
-            <tr>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->price }}</td>
-                <td>{{ $item->qty }}</td>
-                <td>{{ $item->subtotal }}</td>
-            </tr>
-        @endforeach
+        @php $total = 0 @endphp
+        @if(session('cart'))
+            @foreach(session('cart') as $id => $products)
+                @php $total += $products['price'] * $products['quantity'] @endphp
+                <tr data-id="{{ $id }}">
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-3 hidden-xs"><img src="{{ asset('product/'.$products['image']) }}" width="100" height="100" class="img-responsive"/></div>
+                            <div class="col-sm-9">
+                                <h4 class="nomargin">{{ $products['name'] }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">${{ $products['price'] }}</td>
+                    <td data-th="Quantity">
+                        <input type="number" value="{{ $products['quantity'] }}" class="form-control quantity cart_update" min="1" />
+                    </td>
+                    <td data-th="Subtotal" class="text-center">${{ $products['price'] * $products['quantity'] }}</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-danger btn-sm cart_remove"><i class="fa fa-trash-o"></i> Delete</button>
+                    </td>
+                </tr>
+            @endforeach
+        @endif
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="text-right">
+                <a href="{{ url('/computer') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
+                <button class="btn btn-success"><i class="fa fa-money"></i> Checkout</button>
+            </td>
+        </tr>
+    </tfoot>
 </table>
-
-<p>Total: {{ Cart::total() }}</p>
-
-<a href="{{ route('checkout') }}">Checkout</a>
-
-</body>
-</html>
+@endsection
+   
+@section('scripts')
+<script type="text/javascript">
+   
+    $(".cart_update").change(function (e) {
+        e.preventDefault();
+   
+        var ele = $(this);
+   
+        $.ajax({
+            url: '{{ route('update_cart') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}', 
+                id: ele.parents("tr").attr("data-id"), 
+                quantity: ele.parents("tr").find(".quantity").val()
+            },
+            success: function (response) {
+               window.location.reload();
+            }
+        });
+    });
+   
+    $(".cart_remove").click(function (e) {
+        e.preventDefault();
+   
+        var ele = $(this);
+   
+        if(confirm("Do you really want to remove?")) {
+            $.ajax({
+                url: '{{ route('remove_from_cart') }}',
+                method: "DELETE",
+                data: {
+                    _token: '{{ csrf_token() }}', 
+                    id: ele.parents("tr").attr("data-id")
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
+   
+</script>
+@endsection
