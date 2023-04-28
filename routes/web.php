@@ -29,9 +29,7 @@ route::get('/dashboard',function(){
 route::get('/store',function(){
     return view('store');
 });
-route::get('/cart',function(){
-    return view('cart');
-});
+
 
 route::get('/hairtreatment',function(){
     return view('product_page/product/hairtreatment');
@@ -114,14 +112,12 @@ Route::get('addproduct', [ProductController::class, 'create']);
 Route::post('addproduct', [ProductController::class, 'addproduct']);
 
 
-// Route::get('adddatafromproduct', [ProductController::class, 'showproduct']);
-// Route::view('showproduct','showproduct'); 
+
 Route::get('computer', [ProductController::class, 'showproduct']);
 
 
 Route::get('search', [ProductController::class, 'search']);
 
-// Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add_to_cart');
 
 
 Route::get('product/{id}', [ProductController::class, 'showitem']);
