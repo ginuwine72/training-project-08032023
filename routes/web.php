@@ -113,7 +113,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
 });
-=======
 
 // ----rd
 
@@ -142,4 +141,4 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
->>>>>>> develop
+
