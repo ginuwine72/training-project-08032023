@@ -96,10 +96,10 @@ Route::post('/contract', [ContractController::class , 'store'])->name('contract.
 //     return view('dashboard');
 // })->name('contract.store');
 
-Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
-Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
-Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
-Route::get('/cart', [ShoppingCartController::class, 'showCart']);
+// Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
+// Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
+// Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
+// Route::get('/cart', [ShoppingCartController::class, 'showCart']);
 
 
 Route::get('/store/product', function () {
@@ -128,4 +128,7 @@ Route::get('product/{id}', [ProductController::class, 'showitem']);
 
 Route::get('add_to_cart/{id}', [ProductController::class, 'addtocart'])
 ->name('add_to_cart');
+
+route::get('cart', [ProductController::class, 'cart'])
+->name('cart');
 

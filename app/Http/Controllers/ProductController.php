@@ -88,4 +88,7 @@ public function addToCart($id)
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product add to cart successfully!');
     }
+    public function cart(){
+        return view('cart');
+    }
 }
