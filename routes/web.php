@@ -43,12 +43,12 @@ Route::get('/definedyouself',function(){
     return view('youare');
 });
 
-route::get('/userregister',function(){
-    return view('register/userregister');
-});
-route::get('/ownerregister',function(){
-    return view('register/ownerregister');
-});
+// route::get('/userregister',function(){
+//     return view('register/userregister');
+// });
+// route::get('/ownerregister',function(){
+//     return view('register/ownerregister');
+// });
 
 //contoller for register (User)
 
@@ -59,6 +59,9 @@ Route::post('/userregister', [UserRegisterController::class, 'userregister']);
 
 route::get('/hairtreatment',function(){
     return view('product_page/product/hairtreatment');
+});
+route::get('/hairtreatment2',function(){
+    return view('product_page/product/hairtreatment2');
 });
 route::get('/shoes1',function(){
     return view('product_page/product/shoes1');
@@ -128,6 +131,13 @@ Route::post('/contract', [ContractController::class , 'store'])->name('contract.
 // Auth::routes();
 Route::get('/store/product', function () {
     return view('store');
+});
+Route::get('/store2', function () {
+    return view('store2');
+});
+
+Route::get('/checkout',function(){
+ return view('checkout');
 });
 
 /// Login&Register

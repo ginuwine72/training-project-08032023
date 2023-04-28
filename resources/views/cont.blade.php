@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+
   @vite('resources/css/app.css')
   <title>Contact</title>
   <style>
@@ -80,10 +83,17 @@
   </section>
   <script > window.alert
 function myFunction() {
-  var alertBox = document.createElement("div");
-  alertBox.innerHTML = "Form submitted!";
-  alertBox.classList.add("alert");
-  document.body.appendChild(alertBox);
+  // var alertBox = document.createElement("div");
+  // alertBox.innerHTML = "Form submitted!";
+  // alertBox.classList.add("alert");
+  // document.body.appendChild(alertBox);
+  Swal.fire({
+    title: 'Thank you!',
+    text: 'Your message has been sent.',
+    icon: 'success',
+    confirmButtonText: 'OK'
+  });
+  Swal.toggleTimer(50);
 }
 
 </script>
