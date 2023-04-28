@@ -118,15 +118,6 @@ route::get('/bagpack',function(){
 Route::get('/contract', [ContractController::class , 'index']);
 Route::post('/contract', [ContractController::class , 'store'])->name('contract.store');
 
-// Route::post('/contract',function(){
-//     dd(1);
-//     return view('dashboard');
-// })->name('contract.store');
-
-// Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
-// Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
-// Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
-// Route::get('/cart', [ShoppingCartController::class, 'showCart']);
 
 // Auth::routes();
 Route::get('/store/product', function () {

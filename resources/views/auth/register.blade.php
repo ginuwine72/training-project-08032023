@@ -161,14 +161,6 @@
 </div>
 </div>
 </body>
-                    <!-- <div class="mb-3 row justify-content-center">
-                        <p class="text-muted">Already have an account? <a href="{{ route('login') }}">Login here</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> -->
 <script>
     // Password strength meter
     const passwordInput = document.querySelector('.password-strength');
