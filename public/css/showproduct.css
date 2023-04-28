@@ -1,0 +1,51 @@
+body{
+  background-color:CECECE;
+  margin-left: 70px;
+  /* margin-right: 2px; */
+}
+.fronco {
+text-align: center;
+font-family: 'Roboto', sans-serif;
+color:#336633;
+
+}
+.nameproduct{
+text-decoration: none;
+text-align: center;
+font-family: 'Lato', sans-serif;
+color:#6666FF;
+}
+.price{
+text-align: center;
+font-family: 'Lato', sans-serif;
+color:#6699FF;
+
+
+}
+.frame {
+
+display: inline-block;
+margin: 10px; /* เพิ่ม margin ที่ทุกด้าน */
+margin-bottom: 30px; /* เพิ่ม margin ด้านล่าง */
+}
+
+/* คำสั่งเดียวกันที่เพิ่ม margin-left และ margin-right */
+@media only screen and (min-width: 768px) {
+.frame {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+}
+
+/* ปรับ margin สำหรับจอขนาดเล็กกว่า 768px */
+@media only screen and (max-width: 768px) {
+.frame {
+  margin: 30px;
+  margin-bottom: 30px;
+}
+a{
+  text-decoration: none;
+  }
+
+
+}

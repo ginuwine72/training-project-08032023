@@ -34,6 +34,7 @@ class ContractController extends Controller
         $test->name = $request->name;
         $test->email = $request->email;
         $test->message = $request->message;
+        $test->save();
         return redirect()->back()->with('success', 'Data has been saved successfully');
 
 
