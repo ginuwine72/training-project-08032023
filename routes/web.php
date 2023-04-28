@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\ContractController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ProductController;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,9 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/login', function () {
+    return view('auth/login');
+});
 Route::get('/about', function () {
     return view('about');
 });
@@ -31,8 +34,12 @@ route::get('/store',function(){
 });
 
 
+
 route::get('/hairtreatment',function(){
     return view('product_page/product/hairtreatment');
+});
+route::get('/hairtreatment2',function(){
+    return view('product_page/product/hairtreatment2');
 });
 route::get('/shoes1',function(){
     return view('product_page/product/shoes1');
@@ -89,22 +96,24 @@ route::get('/bagpack',function(){
 Route::get('/contract', [ContractController::class , 'index']);
 Route::post('/contract', [ContractController::class , 'store'])->name('contract.store');
 
-// Route::post('/contract',function(){
-//     dd(1);
-//     return view('dashboard');
-// })->name('contract.store');
 
-// Route::post('/cart/add', [ShoppingCartController::class, 'addItem']);
-// Route::post('/cart/remove', [ShoppingCartController::class, 'removeItem']);
-// Route::post('/cart/update', [ShoppingCartController::class, 'updateQuantity']);
-// Route::get('/cart', [ShoppingCartController::class, 'showCart']);
-
-
+// Auth::routes();
 Route::get('/store/product', function () {
-    return view('store') . '<h4  class="m-0" style="font-size: 30px ;font-weight: bold;"><span style="color:#d4001a">Our</span> Products</h4>
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 class="sr-only">Products</h2>';
+    return view('store');
 });
+
+
+/// Login&Register
+
+Route::controller(LoginRegisterController::class)->group(function() {
+    Route::get('/register', 'register')->name('register');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::post('/logout', 'logout')->name('logout');
+});
+=======
 
 // ----rd
 
@@ -133,3 +142,4 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
+>>>>>>> develop
