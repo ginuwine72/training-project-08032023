@@ -1,7 +1,6 @@
 @extends('layout')
-
+   
 @section('content')
-
 <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -51,8 +50,8 @@
     </tfoot>
 </table>
 @endsection
+   
 @section('scripts')
-
 <script type="text/javascript">
    
     $(".cart_update").change(function (e) {
@@ -61,7 +60,7 @@
         var ele = $(this);
    
         $.ajax({
-            url: '',
+            url: '{{ route('update_cart') }}',
             method: "patch",
             data: {
                 _token: '{{ csrf_token() }}', 
@@ -81,7 +80,7 @@
    
         if(confirm("Do you really want to remove?")) {
             $.ajax({
-                url: '',
+                url: '{{ route('remove_from_cart') }}',
                 method: "DELETE",
                 data: {
                     _token: '{{ csrf_token() }}', 
