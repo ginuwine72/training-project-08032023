@@ -44,7 +44,7 @@
         <tr>
             <td colspan="5" class="text-right">
                 <a href="{{ url('/computer') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
-                <button class="btn btn-success"><i class="fa fa-money"></i> Checkout</button>
+                <button href="{{url('/CheckoutController')}}" class="btn btn-success"><i class="fa fa-money"></i> Checkout</button>
             </td>
         </tr>
     </tfoot>
@@ -94,4 +94,5 @@
     });
    
 </script>
+
 @endsection

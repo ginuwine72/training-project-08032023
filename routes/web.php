@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,8 +82,8 @@ route::get('/bagpack',function(){
 // });
 
 
-// Route::get('/contract',[contractController::class,'contract']);
-// Route::post('/contract',[contractController::class,'store']);
+Route::get('/contract',[contractController::class,'contract']);
+Route::post('/contract',[contractController::class,'store']);
 
 // {
 //     Route::get('/',[contractController::class,'index'])->name('index');
@@ -142,3 +144,17 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
 
+
+//TONY
+
+
+Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout');
+Route::post('/checkout', [CheckoutController::class, 'storeCheckout'])->name('checkout');
+
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+
+
+// Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
+// Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process')->middleware('auth');
+// Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('auth');
