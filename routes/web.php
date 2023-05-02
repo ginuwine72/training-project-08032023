@@ -74,25 +74,7 @@ route::get('/joygame',function(){
 route::get('/bagpack',function(){
     return view('product_page/product/bagpack');
 });
-// สำหรับทำ สไลด์รูปภาพ //
-// Route::get('/carousel', function () {
-//     return view('carousel');
-// });
 
-
-// Route::get('/contract',[contractController::class,'contract']);
-// Route::post('/contract',[contractController::class,'store']);
-
-// {
-//     Route::get('/',[contractController::class,'index'])->name('index');
-//     Route::get('/create',[contractController::class,'create'])->name('create');
-//     Route::post('/store',[contractController::class,'store'])->name('store');
-
-// }
-// Route::get('/contract', function () {
-//     return view('cont');
-// })->name('contract');
-// Routes::resource('/contract')
 Route::get('/contract', [ContractController::class , 'index']);
 Route::post('/contract', [ContractController::class , 'store'])->name('contract.store');
 
@@ -113,7 +95,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
 });
-=======
 
 // ----rd
 
@@ -142,4 +123,8 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
->>>>>>> develop
+
+Route::get('addminproduct', [ProductController::class, 'addminproduct']);
+route::view('navbra','navbra');
+
+Route::get('Delete/{id}', [ProductController::class, 'Delete']);

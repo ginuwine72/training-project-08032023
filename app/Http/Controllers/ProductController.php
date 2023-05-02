@@ -114,4 +114,19 @@ public function addToCart($id)
             session()->flash('success', 'Product successfully removed!');
         }
     }
+    public function addminproduct()
+{
+    $product=product::all();
+   return view('adminproduct',['product'=>$product]);
+}
+
+public function Delete($id)
+{
+    $product=product::find($id);
+    $product->delete(); 
+    return redirect('addminproduct');
+}
+
+
+
 }
