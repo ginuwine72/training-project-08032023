@@ -148,13 +148,18 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 //TONY
 
 
-Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout');
-Route::post('/checkout', [CheckoutController::class, 'storeCheckout'])->name('checkout');
+// Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout');
+// Route::post('/checkout', [CheckoutController::class, 'storeCheckout'])->name('checkout');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+// // Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+// Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
 
 
 // Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
 // Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process')->middleware('auth');
 // Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('auth');
+
+Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout.create');
+Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/checkout', [CheckoutController::class, 'index']);
+Route::get('/checkout/{id}', [CheckoutController::class, 'show']);

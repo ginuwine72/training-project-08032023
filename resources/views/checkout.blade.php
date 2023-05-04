@@ -10,7 +10,7 @@
           <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Payment</div>
           <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Confirmation</div>
         </div>
-        <form action="{{ route('checkout.process') }}" method="POST">
+        <form action="{{ route('checkout.store') }}" method="POST">
           @csrf
           <div class="tab-content">
             <div class="tab-pane fade show active" id="cart" role="tabpanel" aria-labelledby="cart-tab">
@@ -64,7 +64,7 @@
     <div class="progress-step">3. Confirmation</div>
 </div>
 
-<form action="{{ route('checkout.process') }}" method="POST">
+<form action="{{ route('checkout.store') }}" method="POST">
     @csrf
 
     <div class="form-group">

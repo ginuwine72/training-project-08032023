@@ -9,6 +9,8 @@ class Checkout extends Model
 {
     use HasFactory;
 
+    protected $table = 'checkout';
+
     protected $fillable = [
         'customer_name',
         'email',

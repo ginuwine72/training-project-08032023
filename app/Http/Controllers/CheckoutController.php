@@ -46,6 +46,17 @@ class CheckoutController extends Controller
         // Redirect the user to the order confirmation page
         return view('checkout.confirmation', ['checkout' => $checkout]);
     }
+    public function index()
+    {
+        $checkout = Checkout::all();
     
+        return view('checkout', ['checkout' => $checkout]);
+    }
+    public function show()
+    {
+        $checkout = Checkout::all();
+        
+        return view('checkout',['checkout'=>$checkout]);
+    }
      
 }
