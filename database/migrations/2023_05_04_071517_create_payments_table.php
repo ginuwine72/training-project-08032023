@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('checkout', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip');
+            $table->unsignedBigInteger('checkout_id');
+            $table->decimal('amount', 8, 2);
+            $table->dateTime('paid_at');
+            $table->enum('status', ['paid', 'pending'])->default('pending');
             $table->timestamps();
+        
+            $table->foreign('checkout_id')->references('id')->on('checkouts');
         });
+        
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkout');
+        Schema::dropIfExists('payments');
     }
 };

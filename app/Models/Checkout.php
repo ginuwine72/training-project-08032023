@@ -12,16 +12,11 @@ class Checkout extends Model
     protected $table = 'checkout';
 
     protected $fillable = [
-        'customer_name',
-        'email',
+        'name',
         'phone',
         'address',
         'city',
         'state',
         'zip',
-        'card_name',
-        'card_number',
-        'card_expiry',
-        'card_cvv',
     ];
 }

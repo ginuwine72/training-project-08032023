@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Requests\CheckoutRequest;
+use App\Http\Controllers\PromptPayController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -161,5 +164,20 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 
 Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout.create');
 Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
-Route::get('/checkout', [CheckoutController::class, 'index']);
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::get('/checkout/{id}', [CheckoutController::class, 'show']);
+Route::post('/checkout2', [CheckoutController::class, 'checkout2'])->name('checkout2');
+
+route::get('/payment',function(){
+    return view('Payment');
+});
+Route::fallback(function () {
+    return view('404');
+});
+route::get('/review',function(){
+    return view('orderreview');
+});
+route::get('/shipped',function(){
+    return view('shipped');
+});
+Route::get('/promptpay/qr/{amount}', [PromptPayController::class, 'generateQRCode'])->name('promptpay.qr');

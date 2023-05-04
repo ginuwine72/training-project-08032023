@@ -28,24 +28,33 @@ class CheckoutController extends Controller
         $checkout = new Checkout();
 
         // Set the checkout properties
-        $checkout->customer_name = $request->input('customer_name');
-        $checkout->email = $request->input('email');
+        $checkout->name = $request->input('name');
         $checkout->phone = $request->input('phone');
         $checkout->address = $request->input('address');
         $checkout->city = $request->input('city');
         $checkout->state = $request->input('state');
         $checkout->zip = $request->input('zip');
-        $checkout->card_name = $request->input('card_name');
-        $checkout->card_number = $request->input('card_number');
-        $checkout->card_expiry = $request->input('card_expiry');
-        $checkout->card_cvv = $request->input('card_cvv');
+
 
         // Save the checkout to the database
         $checkout->save();
+        
 
         // Redirect the user to the order confirmation page
-        return view('checkout.confirmation', ['checkout' => $checkout]);
+        return view('payment', ['checkout' => $checkout]);
     }
+    
+    public function checkout()
+{
+    $cart = session('cart');
+    $total = 0;
+    foreach ($cart as $id => $product) {
+        $total += $product['quantity'] * $product['price'];
+    }
+    return view('checkout', compact('total'));
+
+    
+}
     public function index()
     {
         $checkout = Checkout::all();
@@ -58,5 +67,18 @@ class CheckoutController extends Controller
         
         return view('checkout',['checkout'=>$checkout]);
     }
-     
+    public function showOrderReviewPage()
+    {
+        $cart = Cart::getContent();
+        $subtotal = Cart::getSubTotal();
+        $total = Cart::getTotal();
+        
+        return view('orderreview', compact('cart', 'subtotal', 'total'));
+    }
+    public function myControllerMethod()
+{
+    $cart = []; // populate the $cart array with data
+    return view('orderreview')->with('cart', $cart);
+}
+
 }

@@ -1,4 +1,4 @@
-@extends('navstore')
+
 @section('content')
 @vite('resources/css/app.css')
 <style>

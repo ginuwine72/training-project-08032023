@@ -10,7 +10,7 @@
 </head>
 <body>
     
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-lg-12 col-sm-12 col-12">
             <div class="dropdown">
@@ -52,7 +52,7 @@
     </div>
 </div>
    
-<br/>
+<br/> -->
 <div class="container">
    
     @if(session('success'))
