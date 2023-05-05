@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Requests\CheckoutRequest;
+use App\Http\Controllers\PromptPayController;
+use App\Models\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +80,22 @@ route::get('/bagpack',function(){
     return view('product_page/product/bagpack');
 });
 
+
+
+Route::get('/contract',[contractController::class,'contract']);
+Route::post('/contract',[contractController::class,'store']);
+
+// {
+//     Route::get('/',[contractController::class,'index'])->name('index');
+//     Route::get('/create',[contractController::class,'create'])->name('create');
+//     Route::post('/store',[contractController::class,'store'])->name('store');
+
+// }
+// Route::get('/contract', function () {
+//     return view('cont');
+// })->name('contract');
+// Routes::resource('/contract')
+
 Route::get('/contract', [ContractController::class , 'index']);
 Route::post('/contract', [ContractController::class , 'store'])->name('contract.store');
 
@@ -124,10 +145,52 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
 
+
 Route::get('adminproduct', [ProductController::class, 'adminproduct']);
 route::view('navbra','navbra');
-
 Route::get('Delete/{id}', [ProductController::class, 'Delete']);
 Route::get('Edit/{id}', [ProductController::class, 'Edit']);
 Route::post('edit', [ProductController::class, 'updateproduct']);
 Route::get('searchAdmin', [ProductController::class, 'searchAdmin']);
+
+
+//TONY
+
+
+// Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout');
+// Route::post('/checkout', [CheckoutController::class, 'storeCheckout'])->name('checkout');
+
+// // Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+// Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+
+
+// Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
+// Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process')->middleware('auth');
+// Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('auth');
+
+Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout.create');
+Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::get('/checkout/{id}', [CheckoutController::class, 'show']);
+Route::post('/checkout2', [CheckoutController::class, 'checkout2'])->name('checkout2');
+
+route::get('/payment',function(){
+    return view('Payment');
+});
+Route::fallback(function () {
+    return view('404');
+});
+route::get('/review',function(){
+    return view('orderreview');
+});
+route::get('/shipped',function(){
+    return view('shipped');
+});
+Route::get('/promptpay/qr/{amount}', [PromptPayController::class, 'generateQRCode'])->name('promptpay.qr');
+
+
+//Product
+
+route::get('/monitor1',function(){
+    return view('product_page/ComputerProduct/monitor');
+});

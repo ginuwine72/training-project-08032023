@@ -118,10 +118,10 @@
   background-color: #1F2937;
 }
 .featured-image{
-  width: 75%;
+  width: 85%;
 }
 .thumbnail{
-    width: 17%;
+    width: 22%;
 }
   /* Product Image */
   .relative {
@@ -233,23 +233,43 @@
       width: 50%;
     }
   }
-  
+  .product-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+}
+
+.featured-image {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
 
 </style>
 <body>
 <div class="product-page-container">
   <div class="product-images">
-    <img class="featured-image" src="https://i.pinimg.com/564x/64/3b/db/643bdb44aca575f1d4d2596594ac5f9f.jpg" width="600" height="500" alt="Product Image">
+    <img class="featured-image" src="https://m.media-amazon.com/images/I/81U+MhwN2OL._AC_SX679_.jpg" width="600" height="500" alt="Product Image">
     <div class="thumbnail-gallery">
-      <img class="thumbnail" src="https://i.pinimg.com/564x/64/3b/db/643bdb44aca575f1d4d2596594ac5f9f.jpg" width="200" height="200" alt="Thumbnail">
-      <img class="thumbnail" src="https://i.pinimg.com/564x/84/fa/f1/84faf16dfac47efef0f053b5859db241.jpg" width="200" height="200" alt="Thumbnail">
-      <img class="thumbnail" src="https://i.pinimg.com/564x/f7/16/19/f71619da91e7e551ec5b1030b2f2cbc6.jpg" width="200" height="200" alt="Thumbnail">
-      <img class="thumbnail" src="https://i.pinimg.com/564x/7b/4c/f2/7b4cf2613d4497d334c3e7457ec8cc3d.jpg" width="200" height="200" alt="Thumbnail">
+      <img class="thumbnail" src="https://m.media-amazon.com/images/I/81U+MhwN2OL._AC_SX679_.jpg" width="200" height="200" alt="Thumbnail">
+      <img class="thumbnail" src="https://m.media-amazon.com/images/I/71q70C5y-3L._AC_SX679_.jpg" width="200" height="200" alt="Thumbnail">
+      <img class="thumbnail" src="https://m.media-amazon.com/images/I/81+iNVsT4TL._AC_SX679_.jpg" width="200" height="200" alt="Thumbnail">
+      <img class="thumbnail" src="https://m.media-amazon.com/images/I/71LfLys193L._AC_SX679_.jpg" width="200" height="200" alt="Thumbnail">
     </div>
   </div>
   <div class="product-info">
-    <h1 class="product-title">Regenerating Face Serum</h1>
-    <p class="product-price">$35.00</p>
+    <h1 class="product-title">LG FHD 32-Inch Computer Monitor</h1>
+    <p class="product-price">$199.99</p>
     <p class="product-description">This powerful serum is formulated to restore skin's youthful glow by reducing the appearance of fine lines and wrinkles. With natural ingredients like rosehip seed oil, jojoba oil, and lavender essential oil, it nourishes and hydrates your skin while protecting it from environmental stressors.</p>
     <form class="product-form">
       <label for="quantity">Quantity:</label>

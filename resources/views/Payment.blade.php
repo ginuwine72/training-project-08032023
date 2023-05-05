@@ -59,7 +59,7 @@
     color: #007bff;
   }
 
-  .checkout-section {
+  /* .checkout-section {
     margin-bottom: 2rem;
   }
 
@@ -68,7 +68,7 @@
     font-weight: 700;
     color: #333;
     margin-bottom: 1rem;
-  }
+  } */
 
   .form-group label {
     font-size: 14px;
@@ -81,11 +81,18 @@
     margin-top: 2rem;
   }
 
-  .checkout-summary {
+  /* .checkout-summary {
     background-color: #f2f2f2;
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 2rem;
+  } */
+  .section-content{
+    width: 500px;
+  }
+  .section-title{
+    font-weight: bolder;
+    font-size: large;
   }
 
   .checkout-summary .section-title {
@@ -151,8 +158,59 @@ footer {
 	padding: 20px;
 	text-align: center;
 }
+.hide-cart .fa-shopping-cart {
+    display: none;
+}
+.checkout-summary{
+  position: relative;
+  left: 550px;
+  top: 50px;
+}
+.QR{
+ position: absolute;
+ top: 150px;
+  left: 100px;
+  width: 300px;
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #c4e201;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+.button-group{
+  position: absolute;
+  top: 580px;
+  left: 245px;
+}
 
   </style>
+
 <div class="row">
   <div class="col-md-12">
     <ul class="breadcrumb">
@@ -165,11 +223,11 @@ footer {
   <div class="col-md-8">
     <div class="checkout-progress">
       <div class="checkout-progress-bar">
-        <div class="step active">
+        <div class="step ">
           <div class="step-number">1</div>
           <div class="step-title">Shipping</div>
         </div>
-        <div class="step">
+        <div class="step active">
           <div class="step-number">2</div>
           <div class="step-title">Payment</div>
         </div>
@@ -180,42 +238,9 @@ footer {
       </div>
     </div>
     <div class="checkout-section">
-      <div class="section-title">Shipping Information</div>
+      <div class="section-title">Payment</div>
       <div class="section-content">
-        <form action="{{route('checkout.store')}}" method="POST">
-          @csrf
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" name="address" required>
-          </div>
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" required>
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control" id="state" name="state" required>
-          </div>
-          <div class="form-group">
-            <label for="zip">Zipcode</label>
-            <input type="text" class="form-control" id="zip" name="zip" required>
-          </div>
-          <div class="checkout-buttons">
-            <button type="submit" class="btn btn-primary">Continue to Payment</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
+      <div class="col-md-4">
     <div class="checkout-summary">
         <div class="section-title">Order Summary</div>
         <div class="section-content">
@@ -250,24 +275,30 @@ footer {
     </div>
 </div>
 
-@if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+      </div>
+      <div>
+        <img class="QR" src="https://promptpay.io/0956417023.png">
+      </div>
     </div>
-@endif
+  </div>
 
-<script>
   
-</script>
+  <div class="button-group">
+    <a href="/review" style="text-decoration:none;">
+    <button >
+    <span>Confirm Payment</span>
+    <svg width="34" height="34" viewBox="0 0 74 74" fill="none"  xmlns="http://www.w3.org/2000/svg">
+        <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+        <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+    </svg>
+</button>
+    </a>
+    </div>
+
+
+    
 
 @endsection
 
-@section('dropdown')
-    <!-- leave this section empty to hide the cart icon in the home page -->
-@endsection
 
 @section('styles')
