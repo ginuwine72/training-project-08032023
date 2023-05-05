@@ -124,7 +124,10 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
 
-Route::get('addminproduct', [ProductController::class, 'addminproduct']);
+Route::get('adminproduct', [ProductController::class, 'adminproduct']);
 route::view('navbra','navbra');
 
 Route::get('Delete/{id}', [ProductController::class, 'Delete']);
+Route::get('Edit/{id}', [ProductController::class, 'Edit']);
+Route::post('edit', [ProductController::class, 'updateproduct']);
+Route::get('searchAdmin', [ProductController::class, 'searchAdmin']);

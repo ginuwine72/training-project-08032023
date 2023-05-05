@@ -79,7 +79,7 @@
   top: 20px;
 }
 </style>
-    @vite('resources/css/app.css')
+@vite('resources/css/app.css')
     
     <title>Store</title>
 </head>

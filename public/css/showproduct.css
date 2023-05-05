@@ -1,27 +1,41 @@
-body{
-  background-color:CECECE;
-  margin-left: 70px;
-  /* margin-right: 2px; */
-}
+
 .fronco {
 text-align: center;
 font-family: 'Roboto', sans-serif;
 color:#336633;
-
 }
+.description{
+  text-decoration: none;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  color:#202020;
+  font-size: 15px;
+}
+
 .nameproduct{
 text-decoration: none;
-text-align: center;
+text-align: left;
 font-family: 'Lato', sans-serif;
-color:#6666FF;
+color:#000000;
+font-size: 20px;
 }
 .price{
-text-align: center;
+text-align: left;
 font-family: 'Lato', sans-serif;
-color:#6699FF;
+color:#ff6600;
 
 
 }
+.priceup {
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  color: #808080;
+  text-decoration: line-through; 
+}
+.priceup, .price {
+  display: inline-block;
+}
+
 .frame {
 
 display: inline-block;
@@ -32,7 +46,7 @@ margin-bottom: 30px; /* เพิ่ม margin ด้านล่าง */
 /* คำสั่งเดียวกันที่เพิ่ม margin-left และ margin-right */
 @media only screen and (min-width: 768px) {
 .frame {
-  margin-left: 20px;
+  margin-left: 50px;
   margin-right: 20px;
 }
 }
@@ -46,6 +60,5 @@ margin-bottom: 30px; /* เพิ่ม margin ด้านล่าง */
 a{
   text-decoration: none;
   }
-
 
 }

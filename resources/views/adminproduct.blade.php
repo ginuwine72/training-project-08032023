@@ -1,35 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/addminproduct.css')}}">
-    <title>admin_product</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<table>
-  <tr>
-    <th>image</th>
-    <th>name</th>
-    <th>Price</th>
-    <th>Delete</th>
-  </tr>
-  @foreach($product as $pd)
-  <tr>
-    <td><img src="{{ asset('product/'.$pd['image']) }}" width="100" height="100" class="img-responsive"/></td>
-    <td>{{$pd['name']}}</td>
-    <td>{{$pd['price']}}</td>
-    <td>
-      <a href={{"Delete/" .$pd['id']}}>
-        
-<button class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
-      </a>
-    </td>
-  </tr>
-  @endforeach
-</table>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">White Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-</body>
-</html>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/computer">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Link</a> -->
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        more
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/cart">Your Cart</a>
+          <a class="dropdown-item" href="/about">About Me</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/contract">Contract</a>
+        </div>
+      </li>
+  
+    </ul>
+    <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/searchAdmin')}}">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+  </div>
+</nav>
+@extends('layout2')
+@section('content')
+
+<div class="container">
+        <div class="row" style="margin:20px;">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Admin Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <a href="{{ url('/addproduct') }}" class="btn btn-success btn-sm" title="Add New Student">
+                            Add New
+                        </a>
+                        <a href="/computer?" class="btn btn-success btn-sm" title="Add New Student">
+                            show product
+                        </a>
+                        <br/>
+                        <br/>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Iamge</th>
+                                        <th>Name_Product</th>
+                                        <th>Price_Product</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($product as $product)
+                                    <tr>
+                                        <td>{{$product->id}}</td>
+                                        <td><img src="{{ asset('product/'.$product['image']) }}" style="width:70px; height:70px"></td>
+</td>
+                                        <td>{{$product->name}}</td>
+                                        <td>{{$product->price}}</td>
+                                        <td>{{$product->description}}</td>
+  
+                                        <td>
+                                            <a href="{{ url('/product/' . $product->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{"Edit/" .$product['id']}}" title="Edit"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+  
+                                      <a href="{{"Delete/" .$product['id']}}">
+                                          
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm("Confirm delete?")"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

@@ -25,7 +25,7 @@
           <a class="dropdown-item" href="/cart">Your Cart</a>
           <a class="dropdown-item" href="/about">About Me</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/contract">Contract</a>
+          <a class="dropdown-item" href="#">Contract</a>
         </div>
       </li>
   
@@ -37,34 +37,3 @@
 
   </div>
 </nav>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{{asset('css/showproduct.css')}}">
-</head>
-
-
-<body>
-	<div class="fronco">
-		<h1><span>OUR PRODUCTS</span></h1> 
-	</div>
-	<div class="kok">
-	@foreach($product as $pd)
-	<a href="{{url('product/'.$pd->id)}}" class="">
-		<div class="frame" style="display: inline-block; margin-right: 35px;" onmouseover="document.getElementById('greeting').style.display = 'block';" onmouseout="document.getElementById('greeting').style.display = 'none';">
-			<img src="{{ asset('product/'.$pd['image']) }}" style="width: 240px; height: 240px;" alt="">
-			<div class="nameproduct">{{$pd['name']}}</div>
-			<div class="description">{{$pd['description']}}</div>
-		
-			<div class="price">	  <div class="priceup"> ฿ {{$pd['price']*3}} </div>  ฿ {{$pd['price']}}</div>
-		</div>
-    
-	</a> 
-  
-	@endforeach
-</body>
-</html>
-
