@@ -79,10 +79,7 @@ route::get('/joygame',function(){
 route::get('/bagpack',function(){
     return view('product_page/product/bagpack');
 });
-// สำหรับทำ สไลด์รูปภาพ //
-// Route::get('/carousel', function () {
-//     return view('carousel');
-// });
+
 
 
 Route::get('/contract',[contractController::class,'contract']);
@@ -98,6 +95,7 @@ Route::post('/contract',[contractController::class,'store']);
 //     return view('cont');
 // })->name('contract');
 // Routes::resource('/contract')
+
 Route::get('/contract', [ContractController::class , 'index']);
 Route::post('/contract', [ContractController::class , 'store'])->name('contract.store');
 
@@ -146,6 +144,14 @@ Route::patch('update-cart', [ProductController::class, 'update'])
 
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])
 ->name('remove_from_cart');
+
+
+Route::get('adminproduct', [ProductController::class, 'adminproduct']);
+route::view('navbra','navbra');
+Route::get('Delete/{id}', [ProductController::class, 'Delete']);
+Route::get('Edit/{id}', [ProductController::class, 'Edit']);
+Route::post('edit', [ProductController::class, 'updateproduct']);
+Route::get('searchAdmin', [ProductController::class, 'searchAdmin']);
 
 
 //TONY

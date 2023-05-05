@@ -114,4 +114,62 @@ public function addToCart($id)
             session()->flash('success', 'Product successfully removed!');
         }
     }
+   
+   
+    public function adminproduct()
+{
+    $product=product::all();
+   return view('adminproduct',['product'=>$product]);
+}
+
+public function Delete($id)
+{
+    $product=product::find($id);
+    $product->delete(); 
+    return redirect('adminproduct');
+}
+public function Edit($id)
+{
+    $product=product::find($id);
+    return view('editproduct',['product'=>$product]);
+}
+
+public function updateproduct(Request $req)
+{
+    $product=product::find($req->id);
+ $product->name = $req->input('name');
+        $product->price = $req->input('price');
+        $product->description = $req->input('description');
+    
+        if ($req->hasFile('image')) {
+            $file = $req->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move(public_path('product'), $filename);
+            $product->image = $filename;
+    
+        } else {
+            $product->image = '';
+        }
+    
+        $product->save();
+        return redirect('computer');
+}
+
+
+public function searchAdmin(Request $request)
+{
+  $query = $request->input('search');
+ 
+
+  $products = Product::where('name', 'LIKE', "%$query%")
+                      ->orWhere('price', 'LIKE', "%$query%")
+                      ->orWhere('description', 'LIKE', "%$query%")
+                 
+                      ->paginate(12);
+                      $products->appends($request->all());
+                
+  return view('adminproduct', ['product'=>$products, 'query'=>$query]);
+}
+
 }
