@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Requests\CheckoutRequest;
 use App\Http\Controllers\PromptPayController;
-
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,3 +181,10 @@ route::get('/shipped',function(){
     return view('shipped');
 });
 Route::get('/promptpay/qr/{amount}', [PromptPayController::class, 'generateQRCode'])->name('promptpay.qr');
+
+
+//Product
+
+route::get('/monitor1',function(){
+    return view('product_page/ComputerProduct/monitor');
+});
